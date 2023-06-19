@@ -8,7 +8,7 @@ public class Fighter {
     private int hp;
     private int maxHP;
     private int defense;
-    private int speed = 10 ;
+    private int speed = 22 ;
     private int attack;
     private int gil = 10;
    // private Texture tex = new Texture("warrior.png");
