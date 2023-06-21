@@ -2,6 +2,7 @@ package main;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,7 +13,8 @@ import screens.BattleScreen;
 
 public class Main extends Activity {
 
-    Button btn1P, btn2P;
+    private int width;
+    private int height;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,21 +24,18 @@ public class Main extends Activity {
         //setButtons();
     }
 
-    public void setButtons() {
-        btn1P = (Button) findViewById(R.id.button1);
-        btn2P = (Button) findViewById(R.id.button2);
-        btn1P.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Button was clicked!", Toast.LENGTH_LONG).show();
-            }
-        });
-        btn2P.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Wrong Button!", Toast.LENGTH_LONG).show();
-            }
-        });
+    private void calculateScreenWidth() {
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        width = metrics.widthPixels;
+        height = metrics.heightPixels;
+    }
+
+    public int getWidth() {
+        return height; // Nur spielbar im Querformat, daher Höhe = Breite
+    }
+
+    public int getHeight() {
+        return height;
     }
 
 

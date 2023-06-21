@@ -1,8 +1,8 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Trade extends Ability {
+public class Trade extends Item {
 
     public Trade() {}
     public void run(Fighter actor, Fighter target) {

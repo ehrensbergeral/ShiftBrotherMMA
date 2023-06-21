@@ -1,28 +1,23 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Temper extends Ability {
+public class Protect extends Item {
 
-    public Temper() {}
+    public Protect() {}
 
+    public String getExplanation()  {
+        return "Protect: Erhöhe deine Verteidigung. (5 Gil)";
+    }
     public String getName() {
-        return "Temper (5)";
+        return "Protect (5)";
     }
 
     public void run(Fighter actor, Fighter target) {
         if (actor.getGil() >= 5) {
-            actor.changeAttack(3);
             actor.changeGil(-5);
+            actor.changeDefense(3);
         }
-    }
-
-    public int getPrice() {
-        return 5;
-    }
-
-    public String getExplanation() {
-        return "Temper: Erhöhe Angriffsstärke. (5 Gil)";
     }
 
     public boolean enoughGils(int gils) {
@@ -30,7 +25,8 @@ public class Temper extends Ability {
         return false;
     }
 
+
     public int getTimer() {
-        return 200;
+        return 300;
     }
 }

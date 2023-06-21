@@ -1,8 +1,8 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Cure extends Ability {
+public class Cure extends Item {
 
     int delta;
     public Cure(int delta) {

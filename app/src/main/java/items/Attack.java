@@ -1,11 +1,11 @@
-package abilities;
+package items;
 
 import java.util.Random;
 
 import interfaces.Constants;
 import main.Fighter;
 
-public class Attack extends Ability implements Constants {
+public class Attack extends Item implements Constants {
 
     Fighter actor;
     Fighter target;

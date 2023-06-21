@@ -1,10 +1,10 @@
-package abilities;
+package items;
 
 import java.util.Random;
 
 import main.Fighter;
 
-public class Harm extends Ability {
+public class Harm extends Item {
 
     public Harm() {
     }

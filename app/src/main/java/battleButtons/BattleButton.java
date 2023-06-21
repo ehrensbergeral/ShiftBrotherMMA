@@ -1,4 +1,4 @@
-package main;
+package battleButtons;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,21 +8,39 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class BattleRect {
+import interfaces.Constants;
+import main.Fighter;
+
+public abstract class BattleButton implements Constants {
 
     private Rect rect;
     private String label;
 
-    public BattleRect() {
-        rect = new Rect();
-    }
+    private Context context;
 
-    public BattleRect(int x1, int y1, int x2, int y2) {
+    private boolean isTouched;
+    private float startX;
+    private boolean swipeRight;
+    private boolean swipeLeft;
+    private boolean itemMenuOpened;
+    private boolean itemSelected;
+    private Fighter fighter;
+    private int swipeTolerance;
+
+    public BattleButton(int x1, int y1, int x2, int y2, Context context) {
+        this.context = context;
         rect = new Rect(x1, y1, x2, y2);
+        isTouched = false;
+        swipeRight = false;
+        swipeLeft = false;
+        itemMenuOpened = false;
+        itemSelected = false;
+        swipeTolerance = 200;
     }
 
     public Rect getRect() {
@@ -33,8 +51,6 @@ public class BattleRect {
         return rect.contains(touchX, touchY);
     }
 
-    private boolean isTouched;
-
     public void setTouched(boolean b) {
         isTouched = b;
     }
@@ -43,27 +59,20 @@ public class BattleRect {
         return isTouched;
     }
 
-    private int startX;
-
     public void setStartX(float touchX) {
-        startX = (int) touchX;
+        startX = touchX;
     }
 
     public float getStartX() {
         return startX;
     }
 
-    private boolean swipeRight = false;
-    private boolean swipeLeft = false;
-
     public void setSwipeLeft(boolean b) {
         swipeLeft = b;
-        swipeRight = false;
     }
 
     public void setSwipeRight(boolean b) {
         swipeRight = b;
-        swipeLeft = false;
     }
 
     public boolean isSwipeLeft() {
@@ -74,8 +83,6 @@ public class BattleRect {
         return swipeRight;
     }
 
-    // Labels and Images
-
     public void setLabel(String label) {
         this.label = label;
     }
@@ -84,11 +91,10 @@ public class BattleRect {
         return label;
     }
 
-    private int textSize = 40;
     public void drawLabel(Canvas canvas, Paint paint) {
         if (label == null) label = "NO LABEL";
         paint.setColor(Color.WHITE);
-        paint.setTextSize(textSize);
+        paint.setTextSize(40);
         float textX = rect.left + rect.width() * 1 / 2;
         float textY = rect.top + rect.height() * 1 / 2;
         canvas.drawText(label, textX, textY, paint);
@@ -110,5 +116,20 @@ public class BattleRect {
         } catch (IOException e) {
             Log.e("GraphicsActivity", e.getMessage());
         }
+    }
+
+    public void runActionUp(float touchX, float touchY) {
+    }
+
+    protected void rectSwipedLeft() {
+    }
+
+    protected void rectSwipedRight() {
+    }
+
+    public void runActionDown(float touchX, float touchY) {
+    }
+
+    public void runActionMove(float touchX, float touchY) {
     }
 }

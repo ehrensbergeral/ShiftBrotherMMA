@@ -1,34 +1,34 @@
 package interfaces;
 
-import android.util.DisplayMetrics;
-
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 
-import abilities.Ability;
-import abilities.Attack;
-import abilities.Cure;
-import abilities.CureEx;
-import abilities.Donate;
-import abilities.Harm;
-import abilities.Haste;
-import abilities.Lock;
-import abilities.Protect;
-import abilities.Quick;
-import abilities.Randomize;
-import abilities.Slow;
-import abilities.Temper;
-import abilities.Trade;
+import battleUtilities.Core;
+import items.Item;
+import items.Attack;
+import items.Cure;
+import items.CureEx;
+import items.Donate;
+import items.Harm;
+import items.Haste;
+import items.Lock;
+import items.Protect;
+import items.Quick;
+import items.Randomize;
+import items.Slow;
+import items.Temper;
+import items.Trade;
 import battleUtilities.AI;
 import main.Fighter;
+import main.Main;
 
 public interface Constants {
 
 
+        Core c = new Core();
 
-        Fighter harald = new Fighter("warrior.png", 3000, 20, 10, 10);
-        Fighter gustav = new Fighter("redwizard.png", 3000, 20, 10, 10);
+        Main main = new Main();
+
         String[] battleRectLables = {"FIGHT", "ITEM", "DONATE", "CLOCK"};
         String[] fighterSprites = {"warrior.png", "redwizard.png"};
         final int P1X = 200;
@@ -58,8 +58,8 @@ public interface Constants {
         Quick quick = new Quick();
         Harm hrm = new Harm();
 
-        Ability[] allAbilitiesP1 = {hrm, lock, cure1, tmp, slow, don1, quick, att, trd, curex, prt, haste, don2, rand};
-        Ability[] allAbilitiesP2 = {att, trd, curex, prt, haste, don2, rand, hrm, lock, cure1, tmp, slow, don1, quick};
+        Item[] allAbilitiesP1 = {hrm, lock, cure1, tmp, slow, don1, quick, att, trd, curex, prt, haste, don2, rand};
+        Item[] allAbilitiesP2 = {att, trd, curex, prt, haste, don2, rand, hrm, lock, cure1, tmp, slow, don1, quick};
 
         Timer t = new Timer();
         AI ai = new AI();

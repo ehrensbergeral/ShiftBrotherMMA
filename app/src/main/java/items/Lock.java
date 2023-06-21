@@ -1,9 +1,9 @@
-package abilities;
+package items;
 
 import interfaces.Constants;
 import main.Fighter;
 
-public class Lock extends Ability implements Constants {
+public class Lock extends Item implements Constants {
 
     public Lock() {}
 
