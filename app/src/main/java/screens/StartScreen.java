@@ -61,23 +61,23 @@ public class StartScreen extends Activity implements Constants {
     }
 
     private void reviveCharacters() {
-        if (harald.isDead()) harald.revive();
-        if (gustav.isDead()) gustav.revive();
+        if (c.harald.isDead()) c.harald.revive();
+        if (c.gustav.isDead()) c.gustav.revive();
     }
 
     private void resetStats() {
-        harald.setMaxHP(3000);
-        harald.setHP(3000);
-        harald.setAttack(20);
-        harald.setDefense(10);
-        harald.setSpeed(10);
-        harald.setGil(10);
-        gustav.setMaxHP(3000);
-        gustav.setHP(3000);
-        gustav.setAttack(20);
-        gustav.setDefense(10);
-        gustav.setSpeed(10);
-        gustav.setGil(10);
+        c.harald.setMaxHP(3000);
+        c.harald.setHP(3000);
+        c.harald.setAttack(20);
+        c.harald.setDefense(10);
+        c.harald.setSpeed(10);
+        c.harald.setGil(10);
+        c.gustav.setMaxHP(3000);
+        c.gustav.setHP(3000);
+        c.gustav.setAttack(20);
+        c.gustav.setDefense(10);
+        c.gustav.setSpeed(10);
+        c.gustav.setGil(10);
     }
 
     public void fillTutorialText() {

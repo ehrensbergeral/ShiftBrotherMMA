@@ -1,8 +1,8 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Haste extends Ability {
+public class Haste extends Item {
 
     public Haste() {}
 

@@ -1,8 +1,8 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Donate extends Ability {
+public class Donate extends Item {
 
     int amount;
     public Donate(int amount) {

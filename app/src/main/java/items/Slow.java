@@ -1,8 +1,8 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Slow extends Ability {
+public class Slow extends Item {
 
     public Slow() {}
 

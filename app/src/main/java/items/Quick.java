@@ -1,9 +1,9 @@
-package abilities;
+package items;
 
 import interfaces.Constants;
 import main.Fighter;
 
-public class Quick extends Ability implements Constants {
+public class Quick extends Item implements Constants {
 
     public Quick() {}
 

@@ -1,6 +1,6 @@
 package main;
 
-import abilities.Ability;
+import items.Item;
 
 public class Fighter {
 
@@ -14,7 +14,7 @@ public class Fighter {
    // private Texture tex = new Texture("warrior.png");
     private String path;
 
-    private Ability ab = new Ability();
+    private Item ab = new Item();
     private boolean isLocked = false;
 
 
@@ -174,14 +174,14 @@ public class Fighter {
         return "" + damage;
     }
 
-    public void setAbility(Ability ab) {
+    public void setAbility(Item ab) {
         this.ab = ab;
     }
 
-    public Ability getTempAbility() {
+    public Item getTempAbility() {
         if (ab != null) {
             return ab;
-        } else { return new Ability(); }
+        } else { return new Item(); }
     }
 
     private boolean activeT = false;
@@ -199,13 +199,16 @@ public class Fighter {
         abLocked = b;
     }
 
-    private Ability fixedAbility;
-    public void setFixedAbility(Ability tempAbility) {
+    private Item fixedAbility;
+    public void setFixedAbility(Item tempAbility) {
         fixedAbility = tempAbility;
     }
 
-    public Ability getFixedAbility() {
+    public Item getFixedAbility() {
         if (fixedAbility != null) return fixedAbility;
-        return new Ability();
+        return new Item();
+    }
+
+    public void runItem() {
     }
 }

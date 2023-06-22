@@ -1,9 +1,9 @@
-package abilities;
+package items;
 
 import interfaces.Constants;
 import main.Fighter;
 
-public class Randomize extends Ability implements Constants {
+public class Randomize extends Item implements Constants {
 
     public Randomize() {}
 

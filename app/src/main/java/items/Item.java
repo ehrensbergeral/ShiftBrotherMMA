@@ -1,12 +1,12 @@
-package abilities;
+package items;
 
 import main.Fighter;
 
-public class Ability {
+public class Item {
 
     private String name;
 
-    public Ability() {}
+    public Item() {}
 
     public void run(Fighter actor, Fighter target) {}
 

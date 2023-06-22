@@ -1,6 +1,6 @@
 package battleUtilities;
 
-import abilities.Ability;
+import items.Item;
 import interfaces.Constants;
 import main.Fighter;
 
@@ -26,7 +26,7 @@ public class AI implements Constants {
 
     private int rint;
 
-    public Ability getNextAbility(Fighter player, Fighter enemy) {
+    public Item getNextAbility(Fighter player, Fighter enemy) {
         det = rgen.nextInt(100);
         if ((enemy.getHP() < 300)) {
             if (enemy.getGil() > 10) {
